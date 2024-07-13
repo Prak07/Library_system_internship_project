@@ -51,8 +51,8 @@
             </tr>
             {% for book in books %}
             <tr>
-                <td>{{book.id}}</td>
-                <td>{{book.Title}}</td>
+                <td><a href="/get_book/{{book.id}}" style="text-decoration: none;">{{book.id}}</a></td>
+                <td><a href="/get_book/{{book.id}}" style="text-decoration: none;">{{book.Title}}</a></td>
                 <td>{{book.Author}}</td>
                 <td>{{book.ISBN}}</td>
                 <td><div id="buttons">
@@ -67,10 +67,9 @@
                 </div></td>
             </tr>    
             {% endfor %}
-            {% if messages %}
+            {% elif messages %}
             {% else %}
             <h2 style="color: red;">No books in the Library</h2>
-            {% endif %}
             {% endif %}
         </table>
     </div>

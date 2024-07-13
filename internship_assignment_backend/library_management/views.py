@@ -88,6 +88,22 @@ def delete_book(request,book_id):
         return redirect("/get_book/")
     else:
         return redirect("/login/")
+         
+def look_for_book(request,book_id):
+    if request.user.is_authenticated:
+        try:
+            obj=Books.objects.filter(id=book_id)
+            if len(obj)!=0:
+                return render(request,"get_book.html",{"books":obj})
+            else:
+                messages.error(request,"Invalid Id")
+                return render(request,"get_book.html")
+        except Exception as e:
+            print(e)
+            messages.error(request,"Invalid Id")
+            return redirect("/get_book/")
+    else:
+        return redirect("/login/")
     
 def search(request):
     if request.method=="POST" and "search" in request.POST:

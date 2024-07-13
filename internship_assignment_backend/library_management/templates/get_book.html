@@ -35,11 +35,12 @@
         </div>
         {% if messages %}
             {% for message in messages %}
-            <div>
+            <div style="color: red ;font-size:20px">
                 {{message}}
             </div>
             {% endfor %}
             {% endif %}
+            {% if books %}
         <table border="2px solid black">
             <tr>
                 <th>ID</th>
@@ -48,7 +49,6 @@
                 <th>ISBN</th>
                 <th>Edit/Delete</th>
             </tr>
-            {% if books %}
             {% for book in books %}
             <tr>
                 <td>{{book.id}}</td>
@@ -67,8 +67,10 @@
                 </div></td>
             </tr>    
             {% endfor %}
+            {% if messages %}
             {% else %}
             <h2 style="color: red;">No books in the Library</h2>
+            {% endif %}
             {% endif %}
         </table>
     </div>

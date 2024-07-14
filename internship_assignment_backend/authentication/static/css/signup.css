@@ -22,7 +22,7 @@
     color: var(--text-color);
   }
   
-  .login-container {
+  .signup-container {
     background-color: var(--input-bg);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     border-radius: 20px;
@@ -66,7 +66,7 @@
     box-shadow: 0 0 0 3px rgba(78, 205, 196, 0.2);
   }
   
-  .login-btn {
+  .signup-btn {
     width: 100%;
     padding: 1rem;
     background-color: var(--primary-color);
@@ -81,7 +81,7 @@
     letter-spacing: 1px;
   }
   
-  .login-btn:hover {
+  .signup-btn:hover {
     background-color: #ff8787;
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
